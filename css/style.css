@@ -1,0 +1,25 @@
+body {
+    font-family: Calibri;
+    background-color: azure;
+    margin: 50px 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul li {
+    display: inline;
+    padding-left: 10px;
+    margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+iframe {
+    width: 70%;
+    height: 300px;
+}
+

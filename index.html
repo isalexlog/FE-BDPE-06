@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tel-Ran Timetable</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>Tel Ran Academy Timetable</h1>
+    <h2>Groups</h2>
+    <ul>
+        <li><a href="fourth.html" target="group_timetable">Fourth</a></li>
+        <li><a href="fifth.html" target="group_timetable">Fifth</a></li>
+        <li><a href="sixth.html" target="group_timetable">Sixth</a></li>
+        <li><a id="link7" href="seventh.html" target="group_timetable">Seventh</a></li>
+    </ul>
+
+    <iframe name="group_timetable" src="fourth.html"></iframe>
+
+    <footer>
+    <a href="https://www.tel-ran.de/" target="_blank">Click here to go to Tel Ran website </a>
+    </footer>
+    <script>
+        const trackedLink = document.getElementById("link7");
+        console.log(trackedLink);
+        function showMessage(event) {
+            console.log(event);
+            event.preventDefault();
+            alert("Timetable is not ready yet, please try again later");
+        }
+        trackedLink.addEventListener("click", showMessage);
+    </script>
+</body>
+</html>
