@@ -23,3 +23,19 @@ iframe {
     height: 300px;
 }
 
+.feedback-form {
+    display: block;
+    margin: 10px;
+}
+
+.menu {
+    border: 10px solid black;
+}
+
+.feedback-form-title {
+    font-size: 26px;
+}
+
+img.card-img-top {
+    max-width: 50%;
+}
