@@ -1,0 +1,13 @@
+2019-05-06 in class: Jquery ajax requests
+1. Create Spring app with controller
+2. Create front end form controlled by Jquery to create new employee.
+
+2019-05-06 Homework:
+1. Create form on frontend for searching employee by id
+2. Create controller in Java to process search employee by id
+(to return EmployeeDto object)
+
+2019-05-08
+3. Show employees list
+4. Edit employee data
+5. Delete employee
