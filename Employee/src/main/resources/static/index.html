@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Employee app</title>
+    <link rel="stylesheet" href="style.css">
     <script src="jquery-3.4.0.min.js"></script>
+    <script src="jquery.serializeToJSON.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -18,13 +20,22 @@
         <label for="firstName">First name</label>
         <input id="firstName" name="firstName" type="text" placeholder="First name">
     </div>
+    <div class="error" id="firstNameError">
+        This field can not be empty!!!
+    </div>
     <div>
         <label for="lastName">Last name</label>
         <input id="lastName" name="lastName" type="text" placeholder="Last name">
     </div>
+    <div class="error" id="lastNameError">
+        This field can not be empty!!!
+    </div>
     <div>
         <label for="birthDate">Birth date</label>
         <input id="birthDate" name="birthDate" type="date" placeholder="Birth date">
+    </div>
+    <div class="error" id="birthDateError">
+        This field can not be empty!!!
     </div>
     <div>
         <label for="position">Position</label>
@@ -34,6 +45,9 @@
             <option value="2">Manager</option>
             <option value="3">Co-worker</option>
         </select>
+    </div>
+    <div class="error" id="positionError">
+        This field can not be empty!!!
     </div>
     <div>
         <input type="submit" value="Create employee">
