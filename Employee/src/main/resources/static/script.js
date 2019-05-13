@@ -26,23 +26,6 @@ $(document).ready(function () {
             }
         ];
 
-        var getInput = function(input) {
-            var currentInput = '#employee_form ' + input['element'] + '[name=' + input['name'] + ']';
-            return $(currentInput);
-        };
-
-        var isFormValid = function(inputs) {
-            var isFormValid = true;
-            inputs.forEach(function(input) {
-                var $currentInput = getInput(input);
-                if ($currentInput.val() == input['restrictedValue']) {
-                    isFormValid = false;
-                    $currentInput.parent().next().show();
-                }
-            });
-            return isFormValid;
-        };
-
         inputs.forEach(function (input) {
             var $currentInput = getInput(input);
             $($currentInput).focus(function(){
@@ -70,4 +53,43 @@ $(document).ready(function () {
             }
         });
     });
+
+    var mapPosition = {
+        "1":"Worker",
+        "2":"Manager",
+        "3":"Co-worker"
+    };
+
+    var employees = [
+        {   "id": 1,
+            "firstName": "dsfasdfas",
+            "lastName": "dsfasdfa",
+            "birthDate": "2019-05-24",
+            "position": "1"
+        },
+        {
+            "id": 2,
+            "firstName": "dsfasdfas",
+            "lastName": "dsfasdfa",
+            "birthDate": "2019-05-24",
+            "position": "2"
+        },
+        {
+            "id": 3,
+            "firstName": "dsfasdfas",
+            "lastName": "dsfasdfa",
+            "birthDate": "2019-05-24",
+            "position": "1"
+        },
+        {
+            "id": 4,
+            "firstName": "dsfasdfas",
+            "lastName": "dsfasdfa",
+            "birthDate": "2019-05-24",
+            "position": "1"
+        }
+    ];
+
+    $('table#employees tbody').html(createEmployeeTable(employees, mapPosition));
+
 });

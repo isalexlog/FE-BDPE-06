@@ -10,11 +10,14 @@
 2019-05-08 in class: JQuery ajax requests, form validation
 
 2019-05-08 Homework:
-Add new field "Manager" to the employee form (input containing manager's name of the empoyee)
+Add new field "Manager" to the employee form (input containing manager's name of the employee)
 Add validation (can not be empty)
 Add this field to EmployeeDto in Java part of the project
 
+2019-05-13 in class: show employees list (table), generating html from js dynamically
+
+2019-05-13 Homework: generate select position dropdown dynamically
+
 Next class:
-3. Show employees list
 4. Edit employee data
 5. Delete employee
