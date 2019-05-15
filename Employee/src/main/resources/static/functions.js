@@ -26,8 +26,34 @@ var createEmployeeTable = function(employees, mapPosition) {
         html += '<td>' + employee.birthDate + '</td>';
 
         var position = mapPosition[employee.position];
-        html += '<td>' + position + '</td></tr>';
+        html += '<td>' + position + '</td>';
+        html += '<td><button type="button" name="edit" id="editEmployee_'+ employee.id +'">Edit</button></td> ';
+
+        html += '</tr>'
     });
 
     return html;
+};
+
+
+
+var createSelectOptions = function(options, placeholder) {
+    var html = '';
+    if (placeholder) {
+        html += '<option value="0">' + placeholder + '</option>';
+    }
+    options.forEach(function (option) {
+        html += '<option value="' + option.value + '">'
+            + option.display
+            + '</option>';
+    });
+    return html;
+};
+
+var createPositionMapper = function(employeePositions) {
+    var mapPosition = {};
+    employeePositions.forEach(function(employeePosition) {
+       mapPosition[employeePosition.value] = employeePosition.display;
+    });
+    return mapPosition;
 };

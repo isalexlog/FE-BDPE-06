@@ -54,11 +54,20 @@ $(document).ready(function () {
         });
     });
 
-    var mapPosition = {
-        "1":"Worker",
-        "2":"Manager",
-        "3":"Co-worker"
-    };
+    var employeePositions = [
+        {
+            value: 1,
+            display: "Worker"
+        },
+        {
+            value: 2,
+            display: "Manager"
+        },
+        {
+            value: 3,
+            display: "Co-worker"
+        }
+    ];
 
     var employees = [
         {   "id": 1,
@@ -90,6 +99,16 @@ $(document).ready(function () {
         }
     ];
 
+    var mapPosition = createPositionMapper(employeePositions);
+
     $('table#employees tbody').html(createEmployeeTable(employees, mapPosition));
+
+    $('select#position').html(createSelectOptions(employeePositions, 'Please select employee role'));
+
+    $('table#employees button[name=edit]').each(function () {
+        $(this).click(function (event) {
+            console.log(event.target.id.split("_")[1]);
+        })
+    });
 
 });

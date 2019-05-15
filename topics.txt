@@ -18,6 +18,10 @@ Add this field to EmployeeDto in Java part of the project
 
 2019-05-13 Homework: generate select position dropdown dynamically
 
+2019-05-15 In class: generate select position dropdown dynamically, edit employee data - edit button, click event, converting element id to DB record id
+
+2019-05-15 Homework: think about alternative method of getting record ID from employees table
+
 Next class:
-4. Edit employee data
+4. Edit employee data - continue
 5. Delete employee
