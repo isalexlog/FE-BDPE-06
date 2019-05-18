@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    console.log('kuku');
+
     var $employeeForm = $('#employee_form');
     $employeeForm.submit(function(event) {
         event.preventDefault();
@@ -33,8 +35,6 @@ $(document).ready(function () {
             });
         });
 
-
-
         if (!isFormValid(inputs))
             return;
 
@@ -54,54 +54,35 @@ $(document).ready(function () {
         });
     });
 
-    var employeePositions = [
-        {
-            value: 1,
-            display: "Worker"
+    var mapPosition;
+
+    $.ajax({
+        url: "/position",
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function(data) {
+            console.log(data);
+            mapPosition = createPositionMapper(data);
         },
-        {
-            value: 2,
-            display: "Manager"
-        },
-        {
-            value: 3,
-            display: "Co-worker"
+        error: function() {
+            alert("Can't download employees");
         }
-    ];
+    });
 
-    var employees = [
-        {   "id": 1,
-            "firstName": "dsfasdfas",
-            "lastName": "dsfasdfa",
-            "birthDate": "2019-05-24",
-            "position": "1"
+    $.ajax({
+        url: "/employee",
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function(data) {
+            console.log(data);
+            $('table#employees tbody').html(createEmployeeTable(data, mapPosition));
         },
-        {
-            "id": 2,
-            "firstName": "dsfasdfas",
-            "lastName": "dsfasdfa",
-            "birthDate": "2019-05-24",
-            "position": "2"
-        },
-        {
-            "id": 3,
-            "firstName": "dsfasdfas",
-            "lastName": "dsfasdfa",
-            "birthDate": "2019-05-24",
-            "position": "1"
-        },
-        {
-            "id": 4,
-            "firstName": "dsfasdfas",
-            "lastName": "dsfasdfa",
-            "birthDate": "2019-05-24",
-            "position": "1"
+        error: function() {
+            alert("Can't download employees");
         }
-    ];
-
-    var mapPosition = createPositionMapper(employeePositions);
-
-    $('table#employees tbody').html(createEmployeeTable(employees, mapPosition));
+    });
 
     $('select#position').html(createSelectOptions(employeePositions, 'Please select employee role'));
 

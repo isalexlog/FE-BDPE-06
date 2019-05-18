@@ -2,11 +2,12 @@ package de.telran.employee.dto;
 
 import lombok.Data;
 
-public class EmployeeDto {
+public class EmployeeDto extends DtoWithId  {
+
     private String firstName;
     private String lastName;
     private String birthDate;
-    private String position;
+    private Integer position;
 
     public String getFirstName() {
         return firstName;
@@ -32,18 +33,19 @@ public class EmployeeDto {
         this.birthDate = birthDate;
     }
 
-    public String getPosition() {
+    public Integer getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Integer position) {
         this.position = position;
     }
 
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return "EmployeeDto{" +
-                "firstName='" + firstName + '\'' +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthDate='" + birthDate + '\'' +
                 ", position='" + position + '\'' +
