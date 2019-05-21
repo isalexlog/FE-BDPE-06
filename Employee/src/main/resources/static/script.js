@@ -1,6 +1,8 @@
 $(document).ready(function () {
     console.log('kuku');
 
+    var mapPosition;
+
     var $employeeForm = $('#employee_form');
     $employeeForm.submit(function(event) {
         event.preventDefault();
@@ -45,8 +47,8 @@ $(document).ready(function () {
             contentType: 'application/json',
             data: JSON.stringify($employeeForm.serializeToJSON()),
             success: function(data) {
-                alert("New employee created!!! Id=" + data);
-                $('#id').val(data);
+                fillEmployeesTable(mapPosition);
+                cleanEmployeeForm($('#employee_form'));
             },
             error: function() {
                 alert("Creating new employee failed");
@@ -62,7 +64,7 @@ $(document).ready(function () {
         success: function(positions) {
             console.log(positions);
             fillEmployeeFormSelectPositionOptions(positions);
-            var mapPosition = createPositionMapper(positions);
+            mapPosition = createPositionMapper(positions);
             fillEmployeesTable(mapPosition);
         },
         error: function() {

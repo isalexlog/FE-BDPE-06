@@ -77,3 +77,8 @@ var fillEmployeesTable = function (mapPosition) {
         }
     });
 };
+
+var cleanEmployeeForm = function($form) {
+    $form.find("input[type=text], input[type=date], textarea").val("");
+    $form.find("select").val(0);
+};

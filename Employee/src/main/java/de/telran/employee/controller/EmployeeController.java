@@ -23,8 +23,8 @@ public class EmployeeController {
 
     @PostMapping("")
     public Integer createEmployee(@RequestBody EmployeeDto employee) {
-        logger.info(employee.toString());
-        return 1;
+        employeeRepository.createRecord(employee);
+        return employee.getId();
     }
 
     @GetMapping("")

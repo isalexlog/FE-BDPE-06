@@ -24,6 +24,8 @@ Add this field to EmployeeDto in Java part of the project
 
 2019-05-18 In Class: positions and employee data receive from BE
 
+2019-05-21 In Class: fixing ajax async calls bugs, creating new user from form, updating employee's table
+
 Next class:
 4. Edit employee data - continue
 5. Delete employee
