@@ -54,37 +54,21 @@ $(document).ready(function () {
         });
     });
 
-    var mapPosition;
-
     $.ajax({
         url: "/position",
         type: 'GET',
         dataType: 'json',
         contentType: 'application/json',
-        success: function(data) {
-            console.log(data);
-            mapPosition = createPositionMapper(data);
+        success: function(positions) {
+            console.log(positions);
+            fillEmployeeFormSelectPositionOptions(positions);
+            var mapPosition = createPositionMapper(positions);
+            fillEmployeesTable(mapPosition);
         },
         error: function() {
             alert("Can't download employees");
         }
     });
-
-    $.ajax({
-        url: "/employee",
-        type: 'GET',
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function(data) {
-            console.log(data);
-            $('table#employees tbody').html(createEmployeeTable(data, mapPosition));
-        },
-        error: function() {
-            alert("Can't download employees");
-        }
-    });
-
-    $('select#position').html(createSelectOptions(employeePositions, 'Please select employee role'));
 
     $('table#employees button[name=edit]').each(function () {
         $(this).click(function (event) {

@@ -22,6 +22,8 @@ Add this field to EmployeeDto in Java part of the project
 
 2019-05-15 Homework: think about alternative method of getting record ID from employees table
 
+2019-05-18 In Class: positions and employee data receive from BE
+
 Next class:
 4. Edit employee data - continue
 5. Delete employee

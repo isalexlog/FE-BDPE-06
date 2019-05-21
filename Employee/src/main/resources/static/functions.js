@@ -57,3 +57,23 @@ var createPositionMapper = function(employeePositions) {
     });
     return mapPosition;
 };
+
+var fillEmployeeFormSelectPositionOptions = function (employeePositions) {
+    $('select#position').html(createSelectOptions(employeePositions, 'Please select employee role'));
+};
+
+var fillEmployeesTable = function (mapPosition) {
+    $.ajax({
+        url: "/employee",
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function(employees) {
+            console.log(employees);
+            $('table#employees tbody').html(createEmployeeTable(employees, mapPosition));
+        },
+        error: function() {
+            alert("Can't download employees");
+        }
+    });
+};
