@@ -10,13 +10,17 @@
     <script src="functions.js"></script>
     <script src="script.js"></script>
 </head>
-<body class="container">
-<h1>Employee application</h1>
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Employee application</h1>
+    </div>
+</div>
 
 <div class="container">
-    <h2>Employee's list</h2>
+    <h3>Employee's list</h3>
     <table class="table" id="employees">
-        <thead>
+        <thead class="thead-dark">
         <tr>
             <th scope="col">Id</th>
             <th scope="col">First name</th>
@@ -29,46 +33,48 @@
         <tbody>
         </tbody>
     </table>
-</div>
 
-<h2>Add employee</h2>
+
+<h3>Add employee</h3>
 <form id="employee_form">
     <div class="row">
-        <label for="id" class="col-md-2">Id</label>
-        <input id="id" name="id" type="text" disabled class="col-md-10">
+        <label for="id" class="col-md-3">Id</label>
+        <input id="id" name="id" type="text" disabled class="col-md-9">
     </div>
     <div class="row">
-        <label for="firstName" class="col-md-2">First name</label>
-        <input id="firstName" name="firstName" type="text" placeholder="First name" class="col-md-10">
+        <label for="firstName" class="col-md-3">First name</label>
+        <input id="firstName" name="firstName" type="text" placeholder="First name" class="col-md-9">
     </div>
     <div class="error alert alert-danger" id="firstNameError">
         This field can not be empty!!!
     </div>
     <div class="row">
-        <label for="lastName" class="col-md-2">Last name</label>
-        <input id="lastName" name="lastName" type="text" placeholder="Last name" class="col-md-10">
+        <label for="lastName" class="col-md-3">Last name</label>
+        <input id="lastName" name="lastName" type="text" placeholder="Last name" class="col-md-9">
     </div>
     <div class="error alert alert-danger" id="lastNameError">
         This field can not be empty!!!
     </div>
     <div class="row">
-        <label for="birthDate" class="col-md-2">Birth date</label>
-        <input id="birthDate" name="birthDate" type="date" placeholder="Birth date" class="col-md-10">
+        <label for="birthDate" class="col-md-3">Birth date</label>
+        <input id="birthDate" name="birthDate" type="date" placeholder="Birth date" class="col-md-9">
     </div>
     <div class="error alert alert-danger" id="birthDateError">
         This field can not be empty!!!
     </div>
     <div class="row">
-        <label for="position" class="col-md-2">Position</label>
-        <select id="position" name="position" class="col-md-10">
+        <label for="position" class="col-md-3">Position</label>
+        <select id="position" name="position" class="col-md-9">
         </select>
     </div>
     <div class="error alert alert-danger" id="positionError">
         This field can not be empty!!!
     </div>
-    <div>
+    <button class="btn btn-primary">
         <input type="submit" value="Create employee">
-    </div>
+    </button>
 </form>
+
+</div>
 </body>
 </html>
